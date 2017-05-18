@@ -1,4 +1,22 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.4.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-04-07T00:30:24+07:00</updated><id>http://localhost:4000/</id><title type="html">Chung Bui</title><subtitle>My biography, profile and curriculum vitae</subtitle><entry><title type="html">Markdown Extra Components</title><link href="http://localhost:4000/markdown-extra-components/" rel="alternate" type="text/html" title="Markdown Extra Components" /><published>2016-02-24T22:48:00+07:00</published><updated>2016-02-24T22:48:00+07:00</updated><id>http://localhost:4000/markdown-extra-components</id><content type="html" xml:base="http://localhost:4000/markdown-extra-components/">&lt;h2 id=&quot;summary&quot;&gt;Summary:&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.4.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-05-19T00:39:26+07:00</updated><id>http://localhost:4000/</id><title type="html">Chung Bui</title><subtitle>My biography, profile and curriculum vitae</subtitle><entry><title type="html">Injection Plugin for Xcode</title><link href="http://localhost:4000/injection-plugin-in-xcode/" rel="alternate" type="text/html" title="Injection Plugin for Xcode" /><published>2017-05-18T22:00:00+07:00</published><updated>2017-05-18T22:00:00+07:00</updated><id>http://localhost:4000/injection-plugin-in-xcode</id><content type="html" xml:base="http://localhost:4000/injection-plugin-in-xcode/">&lt;h2 id=&quot;mục-đích&quot;&gt;Mục đích:&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Nó sẽ giả lập lại chế độ debug giống như trên nền tảng React Native. Nhưng trên Xcode sẽ trực quan hơn khi bạn nhìn thấy được những thay đổi trên code ngay trên hiển thị của Simulator.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;cài-đặt&quot;&gt;Cài đặt:&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;tham-khảo&quot;&gt;Tham khảo:&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/johnno1962/injectionforxcode&quot;&gt;https://github.com/johnno1962/injectionforxcode&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://johntmcintosh.com/blog/2016/10/03/code-injection-ios&quot;&gt;https://johntmcintosh.com/blog/2016/10/03/code-injection-ios&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://johntmcintosh.com/blog/2016/09/30/xcode8-extensions&quot;&gt;https://johntmcintosh.com/blog/2016/09/30/xcode8-extensions&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;</content><author><name>bunchu</name></author><category term="blog" /><category term="injection" /><category term="xcode" /><category term="auto-layout" /><summary type="html">Mục đích:</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/images/markdown.jpg" /></entry><entry><title type="html">Markdown Extra Components</title><link href="http://localhost:4000/markdown-extra-components/" rel="alternate" type="text/html" title="Markdown Extra Components" /><published>2016-02-24T22:48:00+07:00</published><updated>2016-02-24T22:48:00+07:00</updated><id>http://localhost:4000/markdown-extra-components</id><content type="html" xml:base="http://localhost:4000/markdown-extra-components/">&lt;h2 id=&quot;summary&quot;&gt;Summary:&lt;/h2&gt;
 
 &lt;p&gt;You can pick as item to see how to apply in markdown.&lt;/p&gt;
 
