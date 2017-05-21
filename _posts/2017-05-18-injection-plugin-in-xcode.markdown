@@ -14,22 +14,57 @@ description: Injection in Xcode
 # jemoji: '<img class="emoji" title=":ramen:" alt=":ramen:" src="https://assets.github.com/images/icons/emoji/unicode/1f35c.png" height="20" width="20" align="absmiddle">'
 ---
 
-## Mục đích:
+## I - Mục đích:
 
 - Nó sẽ giả lập lại chế độ debug giống như trên nền tảng React Native. Nghĩa là bạn chỉ cần bấm một tổ hợp phím(ở đây là 'Ctrl + ='), toàn bộ những thay đổi của bạn trên code sẽ được cập nhập trên Simulator - phần mềm giả lập thiết bị.
 
-## Cài đặt: 
+## II - Cài đặt: 
 Mình sẽ trình bày cho việc sử dụng Injection trên Xcode và AppCode(cái này mới thịnh hành)
 ### Xcode
 1. Unsign Xcode: nghĩa là bạn sẽ phải tạo ra một phiên bản khác cho Xcode, để phục vụ quá trình injection.
-- Tải hoặc git clone [https://github.com/johntmcintosh/xcunsign](https://github.com/johntmcintosh/xcunsign)
-- chạy trực tiếp script để tiến hành unsign.
+- Tải bản beta từ trang cá nhân của tác giả [http://johnholdsworth.com/injection.html]
+- Chạy trực tiếp script để tiến hành unsign.
 Ví dụ: mình sử dụng phiên bản Xcode 8.2.1
 ![Markdowm Image]({{site.url}}/assets/post/2017/injection/unsign.png)
+![Markdowm Image]({{site.url}}/assets/post/2017/injection/unsign_1.png)
 
 2. Cài đặt Injection plugin: có 2 cách 
 
+    A. Tải file zip hoặc git clone [https://github.com/johnno1962/injectionforxcode](https://github.com/johnno1962/injectionforxcode) và cài đặt bằng Xcode  
+    B. Tải bản beta từ trang cá nhân của tác giả [http://johnholdsworth.com/injection.html](http://johnholdsworth.com/injection.html)
+
 ### AppCode:
+
+* Tải file jar mới nhất cho AppCode [tại đây](https://raw.githubusercontent.com/johnno1962/InjectionApp/master/InjectionAppCode/Injection.jar)
+* Vào Preference -> Plugins -> Install plugin from disk -> Link to dowloaded jar file
+
+**Note:**
+- Thật sự là việc cài đặt này phụ thuộc rất nhiều vào việc cô có thương bạn ngày hôm đó không. 
+- Mình đã mất một ngày ngồi chỉ để tìm cách làm sao cho nó chạy được trên AppCode và Xcode. Nhưng máy trên công ty và ở nhà lại hoàn toàn khác nhau...
+
+## II - Sử dụng:
+* Trong một class của một View Controller bất gì của một màn hình nào đó. 
+
+```
+    func injected() {
+        print("I've been injected: \(self)")
+    }
+```
+* Thực hiện built và chạy trên Simulator.
+* Khi View Controller trên hiện ra. Nhấn tổ hợp phím 'Ctrl + ='. Một đoạn log sẽ được hiện ra dưới Debug area như bên dưới. Nghĩa là bạn đã cài đặt và sử dụng thành công.
+
+![Markdowm Image]({{site.url}}/assets/post/2017/injection/unsign_2.png)
+
+* Mỗi lần sử dụng thao tác này, code sẽ chạy vào hàm injected, thực hiện dòng lệnh nếu có thay đổi code. Thay thử vài thao tác cơ bản để thấy sự khác biệt.
+```
+    func injected() {
+        print("I've been injected: \(self)")
+        view.backgroundColor = .darkText
+    }
+```
+![Markdowm Image]({{site.url}}/assets/post/2017/injection/unsign_3.png)
+* Vào nhớ Cmd + S để save lại trạng thái trước khi thử.
+
 ## Tham khảo:
 
 1. [https://github.com/johnno1962/injectionforxcode](https://github.com/johnno1962/injectionforxcode)
@@ -37,3 +72,4 @@ Ví dụ: mình sử dụng phiên bản Xcode 8.2.1
 3. [https://johntmcintosh.com/blog/2016/09/30/xcode8-extensions](https://johntmcintosh.com/blog/2016/09/30/xcode8-extensions)
 
 4. [https://github.com/johnno1962/InjectionApp](https://github.com/johnno1962/InjectionApp)
+5. [http://johnholdsworth.com/injection.html](http://johnholdsworth.com/injection.html)

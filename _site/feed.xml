@@ -1,25 +1,73 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.4.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-05-19T18:10:41+07:00</updated><id>http://localhost:4000/</id><title type="html">Chung Bui</title><subtitle>My biography, profile and curriculum vitae</subtitle><entry><title type="html">Injection Plugin for Xcode</title><link href="http://localhost:4000/injection-plugin-in-xcode/" rel="alternate" type="text/html" title="Injection Plugin for Xcode" /><published>2017-05-18T22:00:00+07:00</published><updated>2017-05-18T22:00:00+07:00</updated><id>http://localhost:4000/injection-plugin-in-xcode</id><content type="html" xml:base="http://localhost:4000/injection-plugin-in-xcode/">&lt;h2 id=&quot;mục-đích&quot;&gt;Mục đích:&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.4.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-05-22T00:11:24+07:00</updated><id>http://localhost:4000/</id><title type="html">Chung Bui</title><subtitle>My biography, profile and curriculum vitae</subtitle><entry><title type="html">Injection Plugin for Xcode</title><link href="http://localhost:4000/injection-plugin-in-xcode/" rel="alternate" type="text/html" title="Injection Plugin for Xcode" /><published>2017-05-18T22:00:00+07:00</published><updated>2017-05-18T22:00:00+07:00</updated><id>http://localhost:4000/injection-plugin-in-xcode</id><content type="html" xml:base="http://localhost:4000/injection-plugin-in-xcode/">&lt;h2 id=&quot;i---mục-đích&quot;&gt;I - Mục đích:&lt;/h2&gt;
 
 &lt;ul&gt;
   &lt;li&gt;Nó sẽ giả lập lại chế độ debug giống như trên nền tảng React Native. Nghĩa là bạn chỉ cần bấm một tổ hợp phím(ở đây là ‘Ctrl + =’), toàn bộ những thay đổi của bạn trên code sẽ được cập nhập trên Simulator - phần mềm giả lập thiết bị.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&quot;cài-đặt&quot;&gt;Cài đặt:&lt;/h2&gt;
+&lt;h2 id=&quot;ii---cài-đặt&quot;&gt;II - Cài đặt:&lt;/h2&gt;
 &lt;p&gt;Mình sẽ trình bày cho việc sử dụng Injection trên Xcode và AppCode(cái này mới thịnh hành)&lt;/p&gt;
 &lt;h3 id=&quot;xcode&quot;&gt;Xcode&lt;/h3&gt;
 &lt;ol&gt;
   &lt;li&gt;Unsign Xcode: nghĩa là bạn sẽ phải tạo ra một phiên bản khác cho Xcode, để phục vụ quá trình injection.
     &lt;ul&gt;
-      &lt;li&gt;Tải hoặc git clone &lt;a href=&quot;https://github.com/johntmcintosh/xcunsign&quot;&gt;https://github.com/johntmcintosh/xcunsign&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;chạy trực tiếp script để tiến hành unsign.
+      &lt;li&gt;Tải bản beta từ trang cá nhân của tác giả [http://johnholdsworth.com/injection.html]&lt;/li&gt;
+      &lt;li&gt;Chạy trực tiếp script để tiến hành unsign.
 Ví dụ: mình sử dụng phiên bản Xcode 8.2.1
-&lt;img src=&quot;http://localhost:4000/assets/post/2017/injection/unsign.png&quot; alt=&quot;Markdowm Image&quot; /&gt;&lt;/li&gt;
+&lt;img src=&quot;http://localhost:4000/assets/post/2017/injection/unsign.png&quot; alt=&quot;Markdowm Image&quot; /&gt;
+&lt;img src=&quot;http://localhost:4000/assets/post/2017/injection/unsign_1.png&quot; alt=&quot;Markdowm Image&quot; /&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;Cài đặt Injection plugin: có 2 cách&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Cài đặt Injection plugin: có 2 cách&lt;/p&gt;
+
+    &lt;p&gt;A. Tải file zip hoặc git clone &lt;a href=&quot;https://github.com/johnno1962/injectionforxcode&quot;&gt;https://github.com/johnno1962/injectionforxcode&lt;/a&gt; và cài đặt bằng Xcode&lt;br /&gt;
+ B. Tải bản beta từ trang cá nhân của tác giả &lt;a href=&quot;http://johnholdsworth.com/injection.html&quot;&gt;http://johnholdsworth.com/injection.html&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;h3 id=&quot;appcode&quot;&gt;AppCode:&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Tải file jar mới nhất cho AppCode &lt;a href=&quot;https://raw.githubusercontent.com/johnno1962/InjectionApp/master/InjectionAppCode/Injection.jar&quot;&gt;tại đây&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Vào Preference -&amp;gt; Plugins -&amp;gt; Install plugin from disk -&amp;gt; Link to dowloaded jar file&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Thật sự là việc cài đặt này phụ thuộc rất nhiều vào việc cô có thương bạn ngày hôm đó không.&lt;/li&gt;
+  &lt;li&gt;Mình đã mất một ngày ngồi chỉ để tìm cách làm sao cho nó chạy được trên AppCode và Xcode. Nhưng máy trên công ty và ở nhà lại hoàn toàn khác nhau…&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;ii---sử-dụng&quot;&gt;II - Sử dụng:&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Trong một class của một View Controller bất gì của một màn hình nào đó.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    func injected() {
+        print(&quot;I've been injected: \(self)&quot;)
+    }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;ul&gt;
+  &lt;li&gt;Thực hiện built và chạy trên Simulator.&lt;/li&gt;
+  &lt;li&gt;Khi View Controller trên hiện ra. Nhấn tổ hợp phím ‘Ctrl + =’. Một đoạn log sẽ được hiện ra dưới Debug area như bên dưới. Nghĩa là bạn đã cài đặt và sử dụng thành công.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/post/2017/injection/unsign_2.png&quot; alt=&quot;Markdowm Image&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Mỗi lần sử dụng thao tác này, code sẽ chạy vào hàm injected, thực hiện dòng lệnh nếu có thay đổi code. Thay thử vài thao tác cơ bản để thấy sự khác biệt.
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  func injected() {
+      print(&quot;I've been injected: \(self)&quot;)
+      view.backgroundColor = .darkText
+  }
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+    &lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/post/2017/injection/unsign_3.png&quot; alt=&quot;Markdowm Image&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Vào nhớ Cmd + S để save lại trạng thái trước khi thử.&lt;/li&gt;
+&lt;/ul&gt;
+
 &lt;h2 id=&quot;tham-khảo&quot;&gt;Tham khảo:&lt;/h2&gt;
 
 &lt;ol&gt;
@@ -29,7 +77,8 @@ Ví dụ: mình sử dụng phiên bản Xcode 8.2.1
     &lt;p&gt;&lt;a href=&quot;https://johntmcintosh.com/blog/2016/09/30/xcode8-extensions&quot;&gt;https://johntmcintosh.com/blog/2016/09/30/xcode8-extensions&lt;/a&gt;&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://github.com/johnno1962/InjectionApp&quot;&gt;https://github.com/johnno1962/InjectionApp&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;</content><author><name>bunchu</name></author><category term="blog" /><category term="injection" /><category term="xcode" /><category term="auto-layout" /><summary type="html">Mục đích:</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/images/markdown.jpg" /></entry><entry><title type="html">Markdown Extra Components</title><link href="http://localhost:4000/markdown-extra-components/" rel="alternate" type="text/html" title="Markdown Extra Components" /><published>2016-02-24T22:48:00+07:00</published><updated>2016-02-24T22:48:00+07:00</updated><id>http://localhost:4000/markdown-extra-components</id><content type="html" xml:base="http://localhost:4000/markdown-extra-components/">&lt;h2 id=&quot;summary&quot;&gt;Summary:&lt;/h2&gt;
+  &lt;li&gt;&lt;a href=&quot;http://johnholdsworth.com/injection.html&quot;&gt;http://johnholdsworth.com/injection.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;</content><author><name>bunchu</name></author><category term="blog" /><category term="injection" /><category term="xcode" /><category term="auto-layout" /><summary type="html">I - Mục đích:</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/images/markdown.jpg" /></entry><entry><title type="html">Markdown Extra Components</title><link href="http://localhost:4000/markdown-extra-components/" rel="alternate" type="text/html" title="Markdown Extra Components" /><published>2016-02-24T22:48:00+07:00</published><updated>2016-02-24T22:48:00+07:00</updated><id>http://localhost:4000/markdown-extra-components</id><content type="html" xml:base="http://localhost:4000/markdown-extra-components/">&lt;h2 id=&quot;summary&quot;&gt;Summary:&lt;/h2&gt;
 
 &lt;p&gt;You can pick as item to see how to apply in markdown.&lt;/p&gt;
 
