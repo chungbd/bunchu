@@ -1,7 +1,7 @@
 ---
 title: "Injection Plugin for Xcode"
 layout: post
-date: 2017-05-18 22:00
+date: 2017-05-22 19:30
 image: /assets/images/markdown.jpg
 headerImage: false
 tag:
@@ -15,6 +15,7 @@ description: Injection in Xcode
 ---
 
 ## I - Mục đích:
+![](https://raw.githubusercontent.com/johnno1962/injectionforxcode/master/documentation/images/injected.gif)
 
 - Nó sẽ giả lập lại chế độ debug giống như trên nền tảng React Native. Nghĩa là bạn chỉ cần bấm một tổ hợp phím(ở đây là 'Ctrl + ='), toàn bộ những thay đổi của bạn trên code sẽ được cập nhập trên Simulator - phần mềm giả lập thiết bị.
 
@@ -65,11 +66,21 @@ Ví dụ: mình sử dụng phiên bản Xcode 8.2.1
 ![Markdowm Image]({{site.url}}/assets/post/2017/injection/unsign_3.png)
 * Vào nhớ Cmd + S để save lại trạng thái trước khi thử.
 
+## III - Sự tồn tại của Plugin này và trường phái chống lại Interface Builder
+* Về công dụng, Plugin này khiến khích bạn lập trình giao diện bằng code nhiều hơn. Nó làm bạn biết sự thay đổi của từng dòng code lên giao diện trong vòng 2 giây
+* Đối nghịch lại khi bạn sử dụng trên Interface Builder(một kiểu lập trình kéo thả giao diện, rất hợp với các designer muốn code giao diện), bạn sẽ phải rebuild lại ứng dụng để thấy sự thay đổi, quá trình đó thực hiện trong vòng 20 giây
+* Sự đối nghịch trên càng lớn hơn với những dự án lớn nhiều màn hình và kéo dài nhiều năm. 
+
+Một vài link để tham khảo về ưu nhược điểm khi sử dụng Interface Builder:
+* [IB Free: Living Without Interface Builder and Loving It](https://www.raizlabs.com/dev/2016/08/ib-free-living-without-interface-builder/)
+* [Life without Interface Builder](https://blog.zeplin.io/life-without-interface-builder-adbb009d2068)
+* [Which is better for iOS apps: storyboards or programmatic development?](https://www.quora.com/Which-is-better-for-iOS-apps-storyboards-or-programmatic-development)
+* [Does the Facebook iOS app use storyboards?](https://www.quora.com/Does-the-Facebook-iOS-app-use-storyboards)
+
 ## Tham khảo:
 
 1. [https://github.com/johnno1962/injectionforxcode](https://github.com/johnno1962/injectionforxcode)
 2. [https://johntmcintosh.com/blog/2016/10/03/code-injection-ios](https://johntmcintosh.com/blog/2016/10/03/code-injection-ios)
 3. [https://johntmcintosh.com/blog/2016/09/30/xcode8-extensions](https://johntmcintosh.com/blog/2016/09/30/xcode8-extensions)
-
 4. [https://github.com/johnno1962/InjectionApp](https://github.com/johnno1962/InjectionApp)
 5. [http://johnholdsworth.com/injection.html](http://johnholdsworth.com/injection.html)
