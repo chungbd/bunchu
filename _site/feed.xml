@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.4.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-05-23T18:04:24+07:00</updated><id>http://localhost:4000/</id><title type="html">Chung Bui</title><subtitle>My biography, profile and curriculum vitae</subtitle><entry><title type="html">Injection Plugin for Xcode</title><link href="http://localhost:4000/injection-plugin-in-xcode/" rel="alternate" type="text/html" title="Injection Plugin for Xcode" /><published>2017-05-22T19:30:00+07:00</published><updated>2017-05-22T19:30:00+07:00</updated><id>http://localhost:4000/injection-plugin-in-xcode</id><content type="html" xml:base="http://localhost:4000/injection-plugin-in-xcode/">&lt;h2 id=&quot;i---mục-đích&quot;&gt;I - Mục đích:&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.4.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-05-26T17:28:22+07:00</updated><id>http://localhost:4000/</id><title type="html">Chung Bui</title><subtitle>My biography, profile and curriculum vitae</subtitle><entry><title type="html">Injection Plugin for Xcode</title><link href="http://localhost:4000/injection-plugin-in-xcode/" rel="alternate" type="text/html" title="Injection Plugin for Xcode" /><published>2017-05-22T19:30:00+07:00</published><updated>2017-05-22T19:30:00+07:00</updated><id>http://localhost:4000/injection-plugin-in-xcode</id><content type="html" xml:base="http://localhost:4000/injection-plugin-in-xcode/">&lt;h2 id=&quot;i---mục-đích&quot;&gt;I - Mục đích:&lt;/h2&gt;
 &lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/johnno1962/injectionforxcode/master/documentation/images/injected.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;ul&gt;
@@ -11,7 +11,7 @@
 &lt;ol&gt;
   &lt;li&gt;Unsign Xcode: nghĩa là bạn sẽ phải tạo ra một phiên bản khác cho Xcode, để phục vụ quá trình injection.
     &lt;ul&gt;
-      &lt;li&gt;Tải bản beta từ trang cá nhân của tác giả [http://johnholdsworth.com/injection.html]&lt;/li&gt;
+      &lt;li&gt;Tải hoặc git clone &lt;a href=&quot;https://github.com/johntmcintosh/xcunsign&quot;&gt;https://github.com/johntmcintosh/xcunsign&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;Chạy trực tiếp script để tiến hành unsign.
 Ví dụ: mình sử dụng phiên bản Xcode 8.2.1
 &lt;img src=&quot;http://localhost:4000/assets/post/2017/injection/unsign.png&quot; alt=&quot;Markdowm Image&quot; /&gt;
@@ -21,11 +21,17 @@ Ví dụ: mình sử dụng phiên bản Xcode 8.2.1
   &lt;li&gt;
     &lt;p&gt;Cài đặt Injection plugin: có 2 cách&lt;/p&gt;
 
-    &lt;p&gt;A. Tải file zip hoặc git clone &lt;a href=&quot;https://github.com/johnno1962/injectionforxcode&quot;&gt;https://github.com/johnno1962/injectionforxcode&lt;/a&gt; và cài đặt bằng Xcode&lt;br /&gt;
- B. Tải bản beta từ trang cá nhân của tác giả &lt;a href=&quot;http://johnholdsworth.com/injection.html&quot;&gt;http://johnholdsworth.com/injection.html&lt;/a&gt;&lt;/p&gt;
+    &lt;p&gt;A. Tải file zip hoặc clone &lt;a href=&quot;https://github.com/johnno1962/injectionforxcode&quot;&gt;https://github.com/johnno1962/injectionforxcode&lt;/a&gt;&lt;/p&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Trong thư mục InjectionPluginLite, mở file .xcodeproj&lt;/li&gt;
+      &lt;li&gt;Thực hiện build the scheme InjectionPluginLite&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;B. Tải bản beta từ trang cá nhân của tác giả &lt;a href=&quot;http://johnholdsworth.com/injection.html&quot;&gt;http://johnholdsworth.com/injection.html&lt;/a&gt;&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ol&gt;
 
+&lt;p&gt;&lt;a href=&quot;https://johntmcintosh.com/blog/2016/10/03/code-injection-ios&quot;&gt;Tham khảo&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&quot;appcode&quot;&gt;AppCode:&lt;/h3&gt;
 
 &lt;ul&gt;

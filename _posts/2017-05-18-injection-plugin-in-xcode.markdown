@@ -23,7 +23,7 @@ description: Injection in Xcode
 Mình sẽ trình bày cho việc sử dụng Injection trên Xcode và AppCode(cái này mới thịnh hành)
 ### Xcode
 1. Unsign Xcode: nghĩa là bạn sẽ phải tạo ra một phiên bản khác cho Xcode, để phục vụ quá trình injection.
-- Tải bản beta từ trang cá nhân của tác giả [http://johnholdsworth.com/injection.html]
+- Tải hoặc git clone [https://github.com/johntmcintosh/xcunsign](https://github.com/johntmcintosh/xcunsign)
 - Chạy trực tiếp script để tiến hành unsign.
 Ví dụ: mình sử dụng phiên bản Xcode 8.2.1
 ![Markdowm Image]({{site.url}}/assets/post/2017/injection/unsign.png)
@@ -31,9 +31,13 @@ Ví dụ: mình sử dụng phiên bản Xcode 8.2.1
 
 2. Cài đặt Injection plugin: có 2 cách 
 
-    A. Tải file zip hoặc git clone [https://github.com/johnno1962/injectionforxcode](https://github.com/johnno1962/injectionforxcode) và cài đặt bằng Xcode  
+    A. Tải file zip hoặc clone [https://github.com/johnno1962/injectionforxcode](https://github.com/johnno1962/injectionforxcode) 
+    - Trong thư mục InjectionPluginLite, mở file .xcodeproj
+    - Thực hiện build the scheme InjectionPluginLite
+    
     B. Tải bản beta từ trang cá nhân của tác giả [http://johnholdsworth.com/injection.html](http://johnholdsworth.com/injection.html)
 
+[Tham khảo](https://johntmcintosh.com/blog/2016/10/03/code-injection-ios)
 ### AppCode:
 
 * Tải file jar mới nhất cho AppCode [tại đây](https://raw.githubusercontent.com/johnno1962/InjectionApp/master/InjectionAppCode/Injection.jar)
