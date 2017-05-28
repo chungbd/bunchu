@@ -31,7 +31,7 @@ Ví dụ: mình sử dụng phiên bản Xcode 8.2.1
 
 2. Cài đặt Injection plugin: có 2 cách 
 
-    A. Tải file zip hoặc clone [https://github.com/johnno1962/injectionforxcode](https://github.com/johnno1962/injectionforxcode) 
+    A. Tải file zip hoặc clone [https://github.com/johnno1962/injectionforxcode](https://github.com/johnno1962/injectionforxcode) - Mình sử dụng cách này. 
     - Trong thư mục InjectionPluginLite, mở file .xcodeproj
     - Thực hiện build the scheme InjectionPluginLite
     
@@ -45,7 +45,8 @@ Ví dụ: mình sử dụng phiên bản Xcode 8.2.1
 
 **Note:**
 - Thật sự là việc cài đặt này phụ thuộc rất nhiều vào việc cô có thương bạn ngày hôm đó không. 
-- Mình đã mất một ngày ngồi chỉ để tìm cách làm sao cho nó chạy được trên AppCode và Xcode. Nhưng máy trên công ty và ở nhà lại hoàn toàn khác nhau...
+- Mình đã mất một ngày ngồi chỉ để tìm cách làm sao cho nó chạy được trên AppCode và Xcode. 
+- Mình khuyên các bạn sử dụng Xcode vì nó free và không gây nhiều lỗi như AppCode(thật sự là chả giá rất nhiều cho nó)
 
 ## II - Sử dụng:
 * Trong một class của một View Controller bất gì của một màn hình nào đó. 

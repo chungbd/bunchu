@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.4.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-05-26T17:28:22+07:00</updated><id>http://localhost:4000/</id><title type="html">Chung Bui</title><subtitle>My biography, profile and curriculum vitae</subtitle><entry><title type="html">Injection Plugin for Xcode</title><link href="http://localhost:4000/injection-plugin-in-xcode/" rel="alternate" type="text/html" title="Injection Plugin for Xcode" /><published>2017-05-22T19:30:00+07:00</published><updated>2017-05-22T19:30:00+07:00</updated><id>http://localhost:4000/injection-plugin-in-xcode</id><content type="html" xml:base="http://localhost:4000/injection-plugin-in-xcode/">&lt;h2 id=&quot;i---mục-đích&quot;&gt;I - Mục đích:&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.4.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-05-28T00:54:19+07:00</updated><id>http://localhost:4000/</id><title type="html">Chung Bui</title><subtitle>My biography, profile and curriculum vitae</subtitle><entry><title type="html">Injection Plugin for Xcode</title><link href="http://localhost:4000/injection-plugin-in-xcode/" rel="alternate" type="text/html" title="Injection Plugin for Xcode" /><published>2017-05-22T19:30:00+07:00</published><updated>2017-05-22T19:30:00+07:00</updated><id>http://localhost:4000/injection-plugin-in-xcode</id><content type="html" xml:base="http://localhost:4000/injection-plugin-in-xcode/">&lt;h2 id=&quot;i---mục-đích&quot;&gt;I - Mục đích:&lt;/h2&gt;
 &lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/johnno1962/injectionforxcode/master/documentation/images/injected.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;ul&gt;
@@ -21,7 +21,7 @@ Ví dụ: mình sử dụng phiên bản Xcode 8.2.1
   &lt;li&gt;
     &lt;p&gt;Cài đặt Injection plugin: có 2 cách&lt;/p&gt;
 
-    &lt;p&gt;A. Tải file zip hoặc clone &lt;a href=&quot;https://github.com/johnno1962/injectionforxcode&quot;&gt;https://github.com/johnno1962/injectionforxcode&lt;/a&gt;&lt;/p&gt;
+    &lt;p&gt;A. Tải file zip hoặc clone &lt;a href=&quot;https://github.com/johnno1962/injectionforxcode&quot;&gt;https://github.com/johnno1962/injectionforxcode&lt;/a&gt; - Mình sử dụng cách này.&lt;/p&gt;
     &lt;ul&gt;
       &lt;li&gt;Trong thư mục InjectionPluginLite, mở file .xcodeproj&lt;/li&gt;
       &lt;li&gt;Thực hiện build the scheme InjectionPluginLite&lt;/li&gt;
@@ -42,7 +42,8 @@ Ví dụ: mình sử dụng phiên bản Xcode 8.2.1
 &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;Thật sự là việc cài đặt này phụ thuộc rất nhiều vào việc cô có thương bạn ngày hôm đó không.&lt;/li&gt;
-  &lt;li&gt;Mình đã mất một ngày ngồi chỉ để tìm cách làm sao cho nó chạy được trên AppCode và Xcode. Nhưng máy trên công ty và ở nhà lại hoàn toàn khác nhau…&lt;/li&gt;
+  &lt;li&gt;Mình đã mất một ngày ngồi chỉ để tìm cách làm sao cho nó chạy được trên AppCode và Xcode.&lt;/li&gt;
+  &lt;li&gt;Mình khuyên các bạn sử dụng Xcode vì nó free và không gây nhiều lỗi như AppCode(thật sự là chả giá rất nhiều cho nó)&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;ii---sử-dụng&quot;&gt;II - Sử dụng:&lt;/h2&gt;
