@@ -88,3 +88,4 @@ Một vài link để tham khảo về ưu nhược điểm khi sử dụng Inte
 3. [https://johntmcintosh.com/blog/2016/09/30/xcode8-extensions](https://johntmcintosh.com/blog/2016/09/30/xcode8-extensions)
 4. [https://github.com/johnno1962/InjectionApp](https://github.com/johnno1962/InjectionApp)
 5. [http://johnholdsworth.com/injection.html](http://johnholdsworth.com/injection.html)
+6. [https://karlbowden.com/quick-start-hot-reloading-in-swift/](https://karlbowden.com/quick-start-hot-reloading-in-swift/)
