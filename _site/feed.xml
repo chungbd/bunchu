@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.4.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-05-28T00:54:19+07:00</updated><id>http://localhost:4000/</id><title type="html">Chung Bui</title><subtitle>My biography, profile and curriculum vitae</subtitle><entry><title type="html">Injection Plugin for Xcode</title><link href="http://localhost:4000/injection-plugin-in-xcode/" rel="alternate" type="text/html" title="Injection Plugin for Xcode" /><published>2017-05-22T19:30:00+07:00</published><updated>2017-05-22T19:30:00+07:00</updated><id>http://localhost:4000/injection-plugin-in-xcode</id><content type="html" xml:base="http://localhost:4000/injection-plugin-in-xcode/">&lt;h2 id=&quot;i---mục-đích&quot;&gt;I - Mục đích:&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.4.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-06-15T11:21:57+07:00</updated><id>http://localhost:4000/</id><title type="html">Chung Bui</title><subtitle>My biography, profile and curriculum vitae</subtitle><entry><title type="html">Injection Plugin for Xcode</title><link href="http://localhost:4000/injection-plugin-in-xcode/" rel="alternate" type="text/html" title="Injection Plugin for Xcode" /><published>2017-05-22T19:30:00+07:00</published><updated>2017-05-22T19:30:00+07:00</updated><id>http://localhost:4000/injection-plugin-in-xcode</id><content type="html" xml:base="http://localhost:4000/injection-plugin-in-xcode/">&lt;h2 id=&quot;i---mục-đích&quot;&gt;I - Mục đích:&lt;/h2&gt;
 &lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/johnno1962/injectionforxcode/master/documentation/images/injected.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;ul&gt;
@@ -51,6 +51,8 @@ Ví dụ: mình sử dụng phiên bản Xcode 8.2.1
   &lt;li&gt;Trong một class của một View Controller bất gì của một màn hình nào đó.&lt;/li&gt;
 &lt;/ul&gt;
 
+&lt;h3 id=&quot;cách-1-sử-dụng-bên-trong-view-controller&quot;&gt;&lt;strong&gt;Cách 1:&lt;/strong&gt; sử dụng bên trong View Controller&lt;/h3&gt;
+
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    func injected() {
         print(&quot;I've been injected: \(self)&quot;)
     }
@@ -74,6 +76,21 @@ Ví dụ: mình sử dụng phiên bản Xcode 8.2.1
     &lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/post/2017/injection/unsign_3.png&quot; alt=&quot;Markdowm Image&quot; /&gt;&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;Vào nhớ Cmd + S để save lại trạng thái trước khi thử.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;cách-2-sử-dụng-một-view-controller-có-nhiệm-vụ-điều-hướng-đến-viewcontroller-cần-inject-code&quot;&gt;&lt;strong&gt;Cách 2:&lt;/strong&gt; Sử dụng một view controller có nhiệm vụ điều hướng đến viewcontroller cần inject code&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Khởi tạo một navigation controller có root controller là TestingInjectionVC.&lt;/li&gt;
+  &lt;li&gt;Trong TestingInjectionVC.swift, khởi tạo một bộ quan sát với định danh là INJECTION_BUNDLE_NOTIFICATION. Khi nhận được notification từ định danh trên, navigation hiện tại sẽ push đến injected view controller.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/post/2017/injection/injectionNoticationName.png&quot; alt=&quot;Markdowm Image&quot; /&gt;
+&lt;img src=&quot;http://localhost:4000/assets/post/2017/injection/injectionNotication.png&quot; alt=&quot;Markdowm Image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Với mình, cách xử lý thứ 2 hiệu quả hơn cho những màn hình cần thiết lại giao diện, theo ý đồ của mình đó là view luôn được chạy lại.&lt;/li&gt;
+  &lt;li&gt;Với cách 1, mình chỉ sử dụng khi muốn kiểm chứng với một vài chi tiết nhỏ thay đổi như màu, text conent.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;iii---sự-tồn-tại-của-plugin-này-và-trường-phái-chống-lại-interface-builder&quot;&gt;III - Sự tồn tại của Plugin này và trường phái chống lại Interface Builder&lt;/h2&gt;

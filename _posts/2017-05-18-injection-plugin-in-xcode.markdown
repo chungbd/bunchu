@@ -51,6 +51,8 @@ Ví dụ: mình sử dụng phiên bản Xcode 8.2.1
 ## II - Sử dụng:
 * Trong một class của một View Controller bất gì của một màn hình nào đó. 
 
+### **Cách 1:** sử dụng bên trong View Controller
+
 ```
     func injected() {
         print("I've been injected: \(self)")
@@ -70,6 +72,17 @@ Ví dụ: mình sử dụng phiên bản Xcode 8.2.1
 ```
 ![Markdowm Image]({{site.url}}/assets/post/2017/injection/unsign_3.png)
 * Vào nhớ Cmd + S để save lại trạng thái trước khi thử.
+
+### **Cách 2:** Sử dụng một view controller có nhiệm vụ điều hướng đến viewcontroller cần inject code
+* Khởi tạo một navigation controller có root controller là TestingInjectionVC.
+* Trong TestingInjectionVC.swift, khởi tạo một bộ quan sát với định danh là INJECTION_BUNDLE_NOTIFICATION. Khi nhận được notification từ định danh trên, navigation hiện tại sẽ push đến injected view controller.
+
+![Markdowm Image]({{site.url}}/assets/post/2017/injection/injectionNoticationName.png)
+![Markdowm Image]({{site.url}}/assets/post/2017/injection/injectionNotication.png)
+
+**Note:**
+- Với mình, cách xử lý thứ 2 hiệu quả hơn cho những màn hình cần thiết lại giao diện, theo ý đồ của mình đó là view luôn được chạy lại.
+- Với cách 1, mình chỉ sử dụng khi muốn kiểm chứng với một vài chi tiết nhỏ thay đổi như màu, text conent.
 
 ## III - Sự tồn tại của Plugin này và trường phái chống lại Interface Builder
 * Về công dụng, Plugin này khiến khích bạn lập trình giao diện bằng code nhiều hơn. Nó làm bạn biết sự thay đổi của từng dòng code lên giao diện trong vòng 2 giây
