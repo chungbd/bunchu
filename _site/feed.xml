@@ -1,4 +1,49 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.4.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-06-15T11:21:57+07:00</updated><id>http://localhost:4000/</id><title type="html">Chung Bui</title><subtitle>My biography, profile and curriculum vitae</subtitle><entry><title type="html">Injection Plugin for Xcode</title><link href="http://localhost:4000/injection-plugin-in-xcode/" rel="alternate" type="text/html" title="Injection Plugin for Xcode" /><published>2017-05-22T19:30:00+07:00</published><updated>2017-05-22T19:30:00+07:00</updated><id>http://localhost:4000/injection-plugin-in-xcode</id><content type="html" xml:base="http://localhost:4000/injection-plugin-in-xcode/">&lt;h2 id=&quot;i---mục-đích&quot;&gt;I - Mục đích:&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.4.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-06-22T11:11:20+07:00</updated><id>http://localhost:4000/</id><title type="html">Chung Bui</title><subtitle>My biography, profile and curriculum vitae</subtitle><entry><title type="html">Application Lifecycle in iOS</title><link href="http://localhost:4000/Application-Lifecycle-in-iOS/" rel="alternate" type="text/html" title="Application Lifecycle in iOS" /><published>2017-06-16T22:00:00+07:00</published><updated>2017-06-16T22:00:00+07:00</updated><id>http://localhost:4000/Application-Lifecycle-in-iOS</id><content type="html" xml:base="http://localhost:4000/Application-Lifecycle-in-iOS/">&lt;h2 id=&quot;loading-application&quot;&gt;Loading Application&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;The user has just turned on his phone, and no applications are running expect for those that belong to the operating system.&lt;/li&gt;
+  &lt;li&gt;Your application is &lt;strong&gt;not running.&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;After the user taps your app’s icon, &lt;strong&gt;Springboard&lt;/strong&gt; - the part of the OS that operates the Home screen of iOS - launches your app.&lt;/li&gt;
+  &lt;li&gt;Your app, and the shared libraries it needs to execute, is loaded into memory while Springboard animates your &lt;em&gt;Default.png&lt;/em&gt; on the screen&lt;/li&gt;
+  &lt;li&gt;Eventually, your app begins execution, and your &lt;em&gt;application delegate&lt;/em&gt; receives the appropriate notification.&lt;/li&gt;
+  &lt;li&gt;When your application is running and in the foreground, &lt;strong&gt;it is in the active state.&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;stopping-application&quot;&gt;Stopping Application&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;On iOS, users tend to only use any given application for a few seconds before returning their phones to their pockets.
+    &lt;ul&gt;
+      &lt;li&gt;After the user has put away your app by pressing the Home button on her iPhone or iPad, your application enters &lt;strong&gt;the background state&lt;/strong&gt;&lt;/li&gt;
+      &lt;li&gt;Typically, apps have 10 seconds to complete any database saves or other long-running tasks(though applications can request additional time from the OS).&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;When all the background processing is complete, the application finally becomes &lt;strong&gt;suspended state&lt;/strong&gt;.
+    &lt;ul&gt;
+      &lt;li&gt;While &lt;strong&gt;suspended&lt;/strong&gt;, applications remain in memory but may not execute code.&lt;/li&gt;
+      &lt;li&gt;The state of your application is persisted.&lt;/li&gt;
+      &lt;li&gt;If the user opens your application while it is suspended, it begins execution exactly where it left off.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;If memory becomes low, the OS can kill your app while it is in the suspended state. The user can also manually terminal your app from multitasking tray.
+    &lt;ul&gt;
+      &lt;li&gt;Once terminated, applications &lt;strong&gt;return to their initial state of not running.&lt;/strong&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;awaking-application&quot;&gt;Awaking Application&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;If the user receives a calendar alert, opens the multitasking tray, or gets a phone call, your application can be put into &lt;strong&gt;the inactive state.&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;The user can open your application without tapping its icon on the Home screen.
+    &lt;ul&gt;
+      &lt;li&gt;If your application receives local or push notifications, or if it is registered for custom URL scheme handing, the user can open it in any number of ways.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;reference&quot;&gt;Reference&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;&quot;&gt;Chater 1 - iOS UICollectionView - The complete guide, 2nd Edition&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;</content><author><name>Bun Chu</name></author><category term="blog" /><category term="Foundation" /><category term="Swift" /><category term="Lifecycle" /><summary type="html">Loading Application The user has just turned on his phone, and no applications are running expect for those that belong to the operating system. Your application is not running. After the user taps your app’s icon, Springboard - the part of the OS that operates the Home screen of iOS - launches your app. Your app, and the shared libraries it needs to execute, is loaded into memory while Springboard animates your Default.png on the screen Eventually, your app begins execution, and your application delegate receives the appropriate notification. When your application is running and in the foreground, it is in the active state.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/images/markdown.jpg" /></entry><entry><title type="html">Injection Plugin for Xcode</title><link href="http://localhost:4000/injection-plugin-in-xcode/" rel="alternate" type="text/html" title="Injection Plugin for Xcode" /><published>2017-05-22T19:30:00+07:00</published><updated>2017-05-22T19:30:00+07:00</updated><id>http://localhost:4000/injection-plugin-in-xcode</id><content type="html" xml:base="http://localhost:4000/injection-plugin-in-xcode/">&lt;h2 id=&quot;i---mục-đích&quot;&gt;I - Mục đích:&lt;/h2&gt;
 &lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/johnno1962/injectionforxcode/master/documentation/images/injected.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;ul&gt;
@@ -116,4 +161,5 @@ Ví dụ: mình sử dụng phiên bản Xcode 8.2.1
   &lt;li&gt;&lt;a href=&quot;https://johntmcintosh.com/blog/2016/09/30/xcode8-extensions&quot;&gt;https://johntmcintosh.com/blog/2016/09/30/xcode8-extensions&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://github.com/johnno1962/InjectionApp&quot;&gt;https://github.com/johnno1962/InjectionApp&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;http://johnholdsworth.com/injection.html&quot;&gt;http://johnholdsworth.com/injection.html&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://karlbowden.com/quick-start-hot-reloading-in-swift/&quot;&gt;https://karlbowden.com/quick-start-hot-reloading-in-swift/&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;</content><author><name>bunchu</name></author><category term="blog" /><category term="injection" /><category term="xcode" /><category term="auto-layout" /><summary type="html">I - Mục đích:</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/images/markdown.jpg" /></entry></feed>
