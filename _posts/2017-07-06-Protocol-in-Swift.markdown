@@ -116,6 +116,9 @@ print(person.getFullName())
 
 ```
 
+## Rằng buộc khởi tạo - Initializer Requirements
+
+
 ## Rằng buộc phương thức thay đổi - Mutating Method Requirements
 
 It mean you will declare a function in struct or enumeration where you can change value of property in, because you can not change value of property in normal function.
@@ -139,8 +142,6 @@ struct Person:FullNamed {
 }
 ```
 
-## Continue updating
-
 
 ## Protocol là một loại dữ liệu - Protocols as Types
 
@@ -148,6 +149,94 @@ Because it is a type, you can use a protocol in many places where other types ar
 * As a parameter type or return type in a function, method, or initializer
 * As the type of a constant, variable, or property
 * As the type of items in an array, dictionary, or other container
+
+## Sự ủy quyền - Delegation:
+
+It is a design pattern that enables a class or structure to delegate some of its responsibilities to an instance of another type.
+
+We are a example about modeling a people in love
+
+```
+protocol InLovePeople {
+    var lover:String { get set }
+    
+    func startTheRelationship()
+}
+
+protocol InLovePeopleDelegate {
+    func peopleDidGoOutTogether(people:InLovePeople)
+    func peopleDidStopRelationship(people:InLovePeople)
+    func peopleWillMakeWedding(people:InLovePeople)
+}
+
+
+class InLoveMan:InLovePeople {
+    var lover: String
+    
+    var delegate:InLovePeopleDelegate?
+    
+    init(loverName:String) {
+        lover = loverName
+    }
+    
+    func startTheRelationship() {
+        if lover == "Not Good" {
+            delegate?.peopleDidStopRelationship(people: self)
+        }
+    }
+}
+
+class PeopleTracker:InLovePeopleDelegate {
+    
+    func peopleWillMakeWedding(people: InLovePeople) {
+        print("We will be so happy!")
+    }
+    
+    func peopleDidGoOutTogether(people: InLovePeople) {
+        print("It's a good sign!")
+    }
+    
+    func peopleDidStopRelationship(people: InLovePeople) {
+        print("Poor you!")
+    }
+}
+
+
+let man = InLoveMan(loverName: "Su Su")
+let tracker = PeopleTracker()
+man.delegate = tracker
+man.startTheRelationship()
+
+```
+
+**Note:**
+Because a delegate isn't required in order to do action like as its instance, the delegate property is defined as an optional 
+
+## Thêm tương thích giao thức với một mở rộng - Adding Protocol Conformance with an Extension.
+
+* You can extend an existing type to adopt and conform to a new protocol, even if you do not have access to the source code for the existing type. 
+* Extensions can add new properties, methods, and subscripts to an existing type.
+
+```
+protocol InLovePeople {
+    var lover:String { get set }
+    
+    func startTheRelationship()
+}
+
+extension InLoveMan: InLovePeople {
+    var faceExpression: String {
+        return "It look like confident and enjoyable with life"
+    }
+}
+```
+
+### Việc khai báo làm theo với một sự mở rộng - Declaring Protocol Adoption with an Extension.
+
+* If a type already conforms to all of the requirements of a protocol, but has not yet stated that it adopts that protocol, you can make it adopt the protocol with an empty extension:
+
+
+## Continue updating
 
 ## Reference: 
 1. [Protocols - Apple](https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/Protocols.html)
