@@ -1,4 +1,285 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.4.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-07-06T16:45:29+07:00</updated><id>http://localhost:4000/</id><title type="html">Chung Bui</title><subtitle>My biography, profile and curriculum vitae</subtitle><entry><title type="html">Application Lifecycle in iOS</title><link href="http://localhost:4000/Application-Lifecycle-in-iOS/" rel="alternate" type="text/html" title="Application Lifecycle in iOS" /><published>2017-06-16T22:00:00+07:00</published><updated>2017-06-16T22:00:00+07:00</updated><id>http://localhost:4000/Application-Lifecycle-in-iOS</id><content type="html" xml:base="http://localhost:4000/Application-Lifecycle-in-iOS/">&lt;h2 id=&quot;loading-application&quot;&gt;Loading Application&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.4.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-07-12T16:16:30+07:00</updated><id>http://localhost:4000/</id><title type="html">Chung Bui</title><subtitle>My biography, profile and curriculum vitae</subtitle><entry><title type="html">Protocol in Swift</title><link href="http://localhost:4000/Protocol-in-Swift/" rel="alternate" type="text/html" title="Protocol in Swift" /><published>2017-07-06T22:00:00+07:00</published><updated>2017-07-06T22:00:00+07:00</updated><id>http://localhost:4000/Protocol-in-Swift</id><content type="html" xml:base="http://localhost:4000/Protocol-in-Swift/">&lt;h2 id=&quot;khái-niệm&quot;&gt;Khái niệm:&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;protocol /Noun /ˈprəʊtəkɒl/: A set of rules governing the exchange or transmission of data between devices. &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;trong Tiếng việc có nghĩa là giao thức, định chuẩn&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;A protocol defines a blueprint of methods, properties, and other requirements that suit a particular task or piece of functionality.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;A blueprint is a reproduction of a technical drawing, documenting an architecture or an engineering design, using a contact print process on light-sensitive sheets.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Nói một cách ngắn ngọn, protocol là giống như việc bạn định nghĩa trước hành vi, cấu trúc của một viewcontroller trong swift, rộng hơn là kiến trúc của toàn ứng dụng.&lt;/p&gt;
+
+&lt;p&gt;VD: Ta có hai màn hình A và B, từ màn hình A sang màn hình B,&lt;/p&gt;
+
+&lt;h2 id=&quot;cú-pháp---syntax&quot;&gt;Cú pháp - Syntax:&lt;/h2&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    protocol MyProtocol {
+        // protocol definition goes here
+    }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;It is the same as declarations of class, structure and enumeration&lt;/p&gt;
+
+&lt;p&gt;A protocol could have a super protocol, it means its inheribility&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    protocol MyProtocol, FirstProtocol, SecondProtocol {
+        // protocol definition goes here
+    }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;rằng-buộc-về-thuộc-tính---property-requirements-&quot;&gt;Rằng buộc về thuộc tính - Property Requirements .&lt;/h2&gt;
+
+&lt;p&gt;Một protocol có thể yêu cầu đối tượng thể hiện bởi Protocol đó cung cấp một thuộc tính chỉ với một tên biến và loại dữ liệu của biến đó.&lt;/p&gt;
+
+&lt;p&gt;Không phân biệt nó là &lt;strong&gt;thuộc tính lưu trữ(stored property)&lt;/strong&gt; hay &lt;strong&gt;thuộc tính được tính toán(Computed property)&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Ta có ví dụ cho hai trường hợp trên như sau:&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;protocol FullNamed {
+    var firstName:String { set get }
+    var lastName:String { set get }
+    
+    var fullName:String { get }
+}
+
+
+struct Person:FullNamed {
+    var firstName: String
+    var lastName: String
+    
+    var fullName: String {
+        return &quot;\(lastName) \(firstName)&quot;
+    }
+}
+
+let person = Person(firstName: &quot;Benjamin&quot;, lastName: &quot;Bui&quot;)
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Ta khai báo một lớp Person mà có rằng buộc biến được khai báo từ protocol FullNamed. Với firstName và lastName là hai thuộc tính có thể gán lại được giá trị và
+lấy được giá trị.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;error: variable with a setter must also have a getter&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;set&lt;/strong&gt; không bao giờ đứng một mình trong &lt;strong&gt;protocol&lt;/strong&gt;, với &lt;strong&gt;get&lt;/strong&gt; thì ngược lại, có thể đứng một mình.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;rằng-buộc-về-phương-thức-trên-trong-protocol---method-requirements&quot;&gt;Rằng buộc về phương thức trên trong protocol - Method requirements&lt;/h2&gt;
+&lt;p&gt;The following example will extend the above protocol with specific instance methods.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;protocol FullNamed {
+    var firstName:String { set get }
+    var lastName:String { set get }
+    
+    func getFullName() -&amp;gt; String
+}
+
+struct Person:FullNamed {
+    var firstName: String
+    var lastName: String
+    
+    init(firstName:String,lastName:String) {
+        self.firstName = firstName
+        self.lastName = lastName
+    }
+    
+    func getFullName() -&amp;gt; String {
+        return &quot;\(lastName) \(firstName)&quot;
+    }
+}
+let person = Person(firstName: &quot;Benjamin&quot;, lastName: &quot;Bui&quot;)
+print(person.getFullName())
+
+/* output 
+ Bui Benjamin
+ 
+ */
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;rằng-buộc-khởi-tạo---initializer-requirements&quot;&gt;Rằng buộc khởi tạo - Initializer Requirements&lt;/h2&gt;
+
+&lt;h2 id=&quot;rằng-buộc-phương-thức-thay-đổi---mutating-method-requirements&quot;&gt;Rằng buộc phương thức thay đổi - Mutating Method Requirements&lt;/h2&gt;
+
+&lt;p&gt;It mean you will declare a function in struct or enumeration where you can change value of property in, because you can not change value of property in normal function.&lt;/p&gt;
+
+&lt;p&gt;With protocol, to do this you have to add prefix &lt;strong&gt;mutating&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;protocol FullNamed {
+    var firstName:String { set get }
+    var lastName:String { set get }
+    
+    mutating func setName(withAnotherFullname fullname:FullNamed)
+}
+
+struct Person:FullNamed {
+    ...
+    mutating func setName(withAnotherFullname fullname: FullNamed) {
+        firstName = fullname.firstName
+        lastName = fullname.lastName
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;protocol-là-một-loại-dữ-liệu---protocols-as-types&quot;&gt;Protocol là một loại dữ liệu - Protocols as Types&lt;/h2&gt;
+
+&lt;p&gt;Because it is a type, you can use a protocol in many places where other types are allowed, including:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;As a parameter type or return type in a function, method, or initializer&lt;/li&gt;
+  &lt;li&gt;As the type of a constant, variable, or property&lt;/li&gt;
+  &lt;li&gt;As the type of items in an array, dictionary, or other container&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;sự-ủy-quyền---delegation&quot;&gt;Sự ủy quyền - Delegation:&lt;/h2&gt;
+
+&lt;p&gt;It is a design pattern that enables a class or structure to delegate some of its responsibilities to an instance of another type.&lt;/p&gt;
+
+&lt;p&gt;We are a example about modeling a people in love&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;protocol InLovePeople {
+    var lover:String { get set }
+    
+    func startTheRelationship()
+}
+
+protocol InLovePeopleDelegate {
+    func peopleDidGoOutTogether(people:InLovePeople)
+    func peopleDidStopRelationship(people:InLovePeople)
+    func peopleWillMakeWedding(people:InLovePeople)
+}
+
+
+class InLoveMan:InLovePeople {
+    var lover: String
+    
+    var delegate:InLovePeopleDelegate?
+    
+    init(loverName:String) {
+        lover = loverName
+    }
+    
+    func startTheRelationship() {
+        if lover == &quot;Not Good&quot; {
+            delegate?.peopleDidStopRelationship(people: self)
+        }
+    }
+}
+
+class PeopleTracker:InLovePeopleDelegate {
+    
+    func peopleWillMakeWedding(people: InLovePeople) {
+        print(&quot;We will be so happy!&quot;)
+    }
+    
+    func peopleDidGoOutTogether(people: InLovePeople) {
+        print(&quot;It's a good sign!&quot;)
+    }
+    
+    func peopleDidStopRelationship(people: InLovePeople) {
+        print(&quot;Poor you!&quot;)
+    }
+}
+
+
+let man = InLoveMan(loverName: &quot;Su Su&quot;)
+let tracker = PeopleTracker()
+man.delegate = tracker
+man.startTheRelationship()
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt;
+Because a delegate isn’t required in order to do action like as its instance, the delegate property is defined as an optional&lt;/p&gt;
+
+&lt;h2 id=&quot;thêm-tương-thích-giao-thức-với-một-mở-rộng---adding-protocol-conformance-with-an-extension&quot;&gt;Thêm tương thích giao thức với một mở rộng - Adding Protocol Conformance with an Extension.&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;You can extend an existing type to adopt and conform to a new protocol, even if you do not have access to the source code for the existing type.&lt;/li&gt;
+  &lt;li&gt;Extensions can add new properties, methods, and subscripts to an existing type.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;protocol InLovePeople {
+    var lover:String { get set }
+    
+    func startTheRelationship()
+}
+
+extension InLoveMan: InLovePeople {
+    var faceExpression: String {
+        return &quot;It look like confident and enjoyable with life&quot;
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;việc-khai-báo-làm-theo-với-một-sự-mở-rộng---declaring-protocol-adoption-with-an-extension&quot;&gt;Việc khai báo làm theo với một sự mở rộng - Declaring Protocol Adoption with an Extension.&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;If a type already conforms to all of the requirements of a protocol, but has not yet stated that it adopts that protocol, you can make it adopt the protocol with an empty extension:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;class InLoveMan {
+    var lover: String
+    
+    var delegate:InLovePeopleDelegate?
+    
+    init(loverName:String) {
+        lover = loverName
+    }
+    
+    func startTheRelationship() {
+        if lover == &quot;Not Good&quot; {
+            delegate?.peopleDidStopRelationship(people: self)
+        }
+    }
+}
+
+class InLoveMan:InLovePeople { }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Types do not automatically adopt a protocol. They must always explicitly declare their adoption of the protocol.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;việc-kế-thừa-của-giao-thức---protocol-inheritance&quot;&gt;Việc kế thừa của giao thức - Protocol Inheritance:&lt;/h2&gt;
+
+&lt;p&gt;A protocol can inherit one or more other protocols and can add further requirements on top of the requirements it inherits.&lt;/p&gt;
+
+&lt;h2 id=&quot;các-giao-thức-chỉ-giành-cho-lớp---class-only-protocols&quot;&gt;Các giao thức chỉ giành cho lớp - Class-Only Protocols:&lt;/h2&gt;
+
+&lt;p&gt;You can limit protocol adoption to class types (and not structures or enumerations) by adding the AnyObject protocol to a protocol’s inheritance list.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;protocol SomeClassOnlyProtocol: AnyObject, SomeInheritedProtocol {
+    // class-only protocol definition goes here
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;sự-kết-hợp-giữa-các-giao-thức---protocol-composition&quot;&gt;Sự kết hợp giữa các giao thức - Protocol Composition&lt;/h2&gt;
+
+&lt;h2 id=&quot;continue-updating&quot;&gt;Continue updating&lt;/h2&gt;
+
+&lt;h2 id=&quot;reference&quot;&gt;Reference:&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/Protocols.html&quot;&gt;Protocols - Apple&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;</content><author><name>Bun Chu</name></author><category term="blog" /><category term="Foundation" /><category term="Swift" /><category term="Protocol" /><summary type="html">Khái niệm:</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/images/markdown.jpg" /></entry><entry><title type="html">Application Lifecycle in iOS</title><link href="http://localhost:4000/Application-Lifecycle-in-iOS/" rel="alternate" type="text/html" title="Application Lifecycle in iOS" /><published>2017-06-16T22:00:00+07:00</published><updated>2017-06-16T22:00:00+07:00</updated><id>http://localhost:4000/Application-Lifecycle-in-iOS</id><content type="html" xml:base="http://localhost:4000/Application-Lifecycle-in-iOS/">&lt;h2 id=&quot;loading-application&quot;&gt;Loading Application&lt;/h2&gt;
 &lt;ol&gt;
   &lt;li&gt;The user has just turned on his phone, and no applications are running expect for those that belong to the operating system.&lt;/li&gt;
   &lt;li&gt;Your application is &lt;strong&gt;not running.&lt;/strong&gt;&lt;/li&gt;
