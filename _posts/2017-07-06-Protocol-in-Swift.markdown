@@ -235,6 +235,44 @@ extension InLoveMan: InLovePeople {
 
 * If a type already conforms to all of the requirements of a protocol, but has not yet stated that it adopts that protocol, you can make it adopt the protocol with an empty extension:
 
+```
+class InLoveMan {
+    var lover: String
+    
+    var delegate:InLovePeopleDelegate?
+    
+    init(loverName:String) {
+        lover = loverName
+    }
+    
+    func startTheRelationship() {
+        if lover == "Not Good" {
+            delegate?.peopleDidStopRelationship(people: self)
+        }
+    }
+}
+
+class InLoveMan:InLovePeople { }
+```
+
+**Note:**
+> Types do not automatically adopt a protocol. They must always explicitly declare their adoption of the protocol. 
+
+## Việc kế thừa của giao thức - Protocol Inheritance:
+
+A protocol can inherit one or more other protocols and can add further requirements on top of the requirements it inherits.
+
+## Các giao thức chỉ giành cho lớp - Class-Only Protocols:
+
+You can limit protocol adoption to class types (and not structures or enumerations) by adding the AnyObject protocol to a protocol’s inheritance list.
+
+```
+protocol SomeClassOnlyProtocol: AnyObject, SomeInheritedProtocol {
+    // class-only protocol definition goes here
+}
+```
+
+## Sự kết hợp giữa các giao thức - Protocol Composition
 
 ## Continue updating
 
