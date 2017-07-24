@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.4.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-07-19T23:48:00+07:00</updated><id>http://localhost:4000/</id><title type="html">Chung Bui</title><subtitle>My biography, profile and curriculum vitae</subtitle><entry><title type="html">Modelling state in Swift</title><link href="http://localhost:4000/Modelling-state-in-swift/" rel="alternate" type="text/html" title="Modelling state in Swift" /><published>2017-07-12T22:00:00+07:00</published><updated>2017-07-12T22:00:00+07:00</updated><id>http://localhost:4000/Modelling-state-in-swift</id><content type="html" xml:base="http://localhost:4000/Modelling-state-in-swift/">&lt;h2 id=&quot;some-source-code-of-truth-and-improvement-from-it&quot;&gt;Some source code of truth and improvement from it&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.4.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-07-24T15:12:05+07:00</updated><id>http://localhost:4000/</id><title type="html">Chung Bui</title><subtitle>My biography, profile and curriculum vitae</subtitle><entry><title type="html">Modelling state in Swift</title><link href="http://localhost:4000/Modelling-state-in-swift/" rel="alternate" type="text/html" title="Modelling state in Swift" /><published>2017-07-12T22:00:00+07:00</published><updated>2017-07-12T22:00:00+07:00</updated><id>http://localhost:4000/Modelling-state-in-swift</id><content type="html" xml:base="http://localhost:4000/Modelling-state-in-swift/">&lt;h2 id=&quot;some-source-code-of-truth-and-improvement-from-it&quot;&gt;Some source code of truth and improvement from it&lt;/h2&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;class Enemy {
     var health = 10
@@ -509,7 +509,52 @@ func wantToBeHappyPerson(likeThis person:InLovePeople &amp;amp; InPassionPeople)
 
 &lt;p&gt;You can use the &lt;em&gt;is&lt;/em&gt; and &lt;em&gt;as&lt;/em&gt; operators to check for Protocol conformance, and to cast to a special protocol.&lt;/p&gt;
 
-&lt;h2 id=&quot;continue-updating&quot;&gt;Continue updating&lt;/h2&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;let object = HappyPerson(lover:&quot;Her&quot;,profession:&quot;Designer&quot;)
+
+if let workLover = object as? InPassionPeople {
+    print(&quot;He is awesome!&quot;)
+}
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;rằng-buộc-tùy-chọn-cho-giao-thức---optional-protocol-requirements&quot;&gt;Rằng buộc tùy chọn cho giao thức - Optional Protocol Requirements:&lt;/h2&gt;
+&lt;p&gt;Optional requirements for protocol do not have to do implemented by types that conform to the protocol.
+Opitional requirements are prefixed by the &lt;em&gt;optional&lt;/em&gt; modifier as part of the protocol’s definition and you can write code that interoperates with Objective-C. 
+Both the protocol and the optional requirement must be marked with the &lt;em&gt;@obj&lt;/em&gt; attribute.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; &lt;em&gt;@obj&lt;/em&gt; protocols can be adopted only by classes that inherit from Objective-C classes or other &lt;em&gt;@obj&lt;/em&gt; classes&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;@objc protocol HappyPersonDataSource {
+    @objc optional func goAhead()
+    @objc optional var objective: String { get }
+}
+
+## 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;protocol-extensions&quot;&gt;Protocol Extensions&lt;/h2&gt;
+&lt;p&gt;Protocols can be extended to provide method and property implementations to conforming types. This allows you to define behavior on protocols themselves, rather than in each type’s individual conformance or in a global function.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;extension InLovePeople {
+    func isThinkingAboutThatPerson() -&amp;gt; bool
+}
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;h3 id=&quot;default-implementations&quot;&gt;Default Implementations&lt;/h3&gt;
+&lt;p&gt;You can use protocol extensions to provide a default implementation to any method or computed property requirement of that protocol.&lt;/p&gt;
+
+&lt;h3 id=&quot;adding-constraints-to-protocol-extensions&quot;&gt;Adding Constraints to Protocol Extensions&lt;/h3&gt;
+
+&lt;p&gt;When you define a protocol extension, you can specify constraints that conforming types must satisfy before the methods and properties of the extension are available. You write these constraints after the name of the protocol you’re extending using a generic &lt;strong&gt;where&lt;/strong&gt; clause.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;extension Collection where Iterator.Element: InLovePeople {
+
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;h2 id=&quot;reference&quot;&gt;Reference:&lt;/h2&gt;
 &lt;ol&gt;

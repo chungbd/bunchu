@@ -274,7 +274,86 @@ protocol SomeClassOnlyProtocol: AnyObject, SomeInheritedProtocol {
 
 ## Sự kết hợp giữa các giao thức - Protocol Composition
 
-## Continue updating
+It mean you can define a temporary local protocol that has the combined requirements of all protocols in the composition.
+
+It has the form *SomeProtocol & AnotherProtocol*
+
+```
+protocol InLovePeople {
+    var lover:String { get set }
+    
+    func startTheRelationship()
+}
+
+protocol InPassionPeople {
+    var profession:String { get set }
+    
+    func startThePassion()
+}
+
+struct HappyPerson: InLovePeople, InPassionPeople  {
+    var lover:String
+    var profession:String
+
+    ...
+}
+
+func wantToBeHappyPerson(likeThis person:InLovePeople & InPassionPeople) {
+    print("Yes, I want to be like \(person.lover) \(person.profession)")
+}
+
+```
+
+## Kiểm tra biến loại protocol - Checking for Protocol Conformance
+
+You can use the *is* and *as* operators to check for Protocol conformance, and to cast to a special protocol.
+
+```
+let object = HappyPerson(lover:"Her",profession:"Designer")
+
+if let workLover = object as? InPassionPeople {
+    print("He is awesome!")
+}
+
+```
+
+## Rằng buộc tùy chọn cho giao thức - Optional Protocol Requirements:
+Optional requirements for protocol do not have to do implemented by types that conform to the protocol.
+Opitional requirements are prefixed by the *optional* modifier as part of the protocol's definition and you can write code that interoperates with Objective-C. 
+Both the protocol and the optional requirement must be marked with the *@obj* attribute.
+
+**Note:** *@obj* protocols can be adopted only by classes that inherit from Objective-C classes or other *@obj* classes 
+
+```
+@objc protocol HappyPersonDataSource {
+    @objc optional func goAhead()
+    @objc optional var objective: String { get }
+}
+
+## 
+```
+
+## Protocol Extensions
+Protocols can be extended to provide method and property implementations to conforming types. This allows you to define behavior on protocols themselves, rather than in each type's individual conformance or in a global function.
+
+```
+extension InLovePeople {
+    func isThinkingAboutThatPerson() -> bool
+}
+
+```
+### Default Implementations
+You can use protocol extensions to provide a default implementation to any method or computed property requirement of that protocol.
+
+### Adding Constraints to Protocol Extensions
+
+When you define a protocol extension, you can specify constraints that conforming types must satisfy before the methods and properties of the extension are available. You write these constraints after the name of the protocol you’re extending using a generic **where** clause.
+
+```
+extension Collection where Iterator.Element: InLovePeople {
+
+}
+```
 
 ## Reference: 
 1. [Protocols - Apple](https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/Protocols.html)
