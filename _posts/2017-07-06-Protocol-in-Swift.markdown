@@ -351,9 +351,17 @@ When you define a protocol extension, you can specify constraints that conformin
 
 ```
 extension Collection where Iterator.Element: InLovePeople {
-
+    func sayLoveTogether() -> String {
+        return "Love All of you"
+    }
 }
+
+let lovers = [InLoveMan(loverName:"Zun"),InLoveMan(loverName:"Zun")]
+lovers.sayLoveTogether()
+
 ```
+
+
 
 ## Reference: 
 1. [Protocols - Apple](https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/Protocols.html)
