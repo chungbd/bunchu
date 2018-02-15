@@ -1,6 +1,6 @@
 # main text of home
 name: Chung Bui
-bio: iOS Developer @Wepay - VCCorp <br> Living in Ha Noi, Viet Nam
+bio: iOS Developer @Binh Anh Electric <br> Living in Ha Noi, Viet Nam
 
 # twitter summary info
 description: My biography, profile and curriculum vitae
@@ -52,7 +52,7 @@ github: chungbd
 email: chungbd90@gmail.com
 
 authors:
-    johndoe:
+    chungbd:
         name: Chung Bui 
         bio: iOS Software Engineer @Wepay - VCCorp
         external-image: false

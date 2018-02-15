@@ -1,4 +1,58 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.4.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-07-24T15:12:05+07:00</updated><id>http://localhost:4000/</id><title type="html">Chung Bui</title><subtitle>My biography, profile and curriculum vitae</subtitle><entry><title type="html">Modelling state in Swift</title><link href="http://localhost:4000/Modelling-state-in-swift/" rel="alternate" type="text/html" title="Modelling state in Swift" /><published>2017-07-12T22:00:00+07:00</published><updated>2017-07-12T22:00:00+07:00</updated><id>http://localhost:4000/Modelling-state-in-swift</id><content type="html" xml:base="http://localhost:4000/Modelling-state-in-swift/">&lt;h2 id=&quot;some-source-code-of-truth-and-improvement-from-it&quot;&gt;Some source code of truth and improvement from it&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.4.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-02-14T16:06:35+07:00</updated><id>http://localhost:4000/</id><title type="html">Chung Bui</title><subtitle>My biography, profile and curriculum vitae</subtitle><entry><title type="html">Generics in Swift</title><link href="http://localhost:4000/Generics-in-Swift/" rel="alternate" type="text/html" title="Generics in Swift" /><published>2017-08-20T22:00:00+07:00</published><updated>2017-08-20T22:00:00+07:00</updated><id>http://localhost:4000/Generics-in-Swift</id><content type="html" xml:base="http://localhost:4000/Generics-in-Swift/">&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt;
+
+&lt;p&gt;There are some significant notes from me while I am reading the book &lt;strong&gt;Clean Code&lt;/strong&gt; of the author &lt;em&gt;Robert C.Martin&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;meaningfull-names&quot;&gt;Meaningfull Names&lt;/h2&gt;
+
+&lt;h3 id=&quot;use-intention-revealing-names&quot;&gt;Use Intention-Revealing Names&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Bad Code
+
+int d; //elapsed time in days
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Good Code
+
+int elapsedTimeInDays;
+int daysSinceCreation;
+int daysSinceModification;
+int fileAgeInDays;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;summary&quot;&gt;Summary:&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Those solution is simple with normal knowledge about Swift. You can try on another solution as RxSwift, ReSwift or using an ELM inspired architecture.&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Bun Chu</name></author><category term="blog" /><category term="foundation" /><category term="Coding Convention" /><summary type="html">Introduction</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/images/markdown.jpg" /></entry><entry><title type="html">Clean Code - Sum up</title><link href="http://localhost:4000/Clean-Code/" rel="alternate" type="text/html" title="Clean Code - Sum up" /><published>2017-08-16T22:00:00+07:00</published><updated>2017-08-16T22:00:00+07:00</updated><id>http://localhost:4000/Clean-Code</id><content type="html" xml:base="http://localhost:4000/Clean-Code/">&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt;
+
+&lt;p&gt;There are some significant notes from me while I am reading the book &lt;strong&gt;Clean Code&lt;/strong&gt; of the author &lt;em&gt;Robert C.Martin&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;meaningfull-names&quot;&gt;Meaningfull Names&lt;/h2&gt;
+
+&lt;h3 id=&quot;use-intention-revealing-names&quot;&gt;Use Intention-Revealing Names&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Bad Code
+
+int d; //elapsed time in days
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Good Code
+
+int elapsedTimeInDays;
+int daysSinceCreation;
+int daysSinceModification;
+int fileAgeInDays;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;summary&quot;&gt;Summary:&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Those solution is simple with normal knowledge about Swift. You can try on another solution as RxSwift, ReSwift or using an ELM inspired architecture.&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Bun Chu</name></author><category term="blog" /><category term="foundation" /><category term="Coding Convention" /><summary type="html">Introduction</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/images/markdown.jpg" /></entry><entry><title type="html">Modelling state in Swift</title><link href="http://localhost:4000/Modelling-state-in-swift/" rel="alternate" type="text/html" title="Modelling state in Swift" /><published>2017-07-12T22:00:00+07:00</published><updated>2017-07-12T22:00:00+07:00</updated><id>http://localhost:4000/Modelling-state-in-swift</id><content type="html" xml:base="http://localhost:4000/Modelling-state-in-swift/">&lt;h2 id=&quot;some-source-code-of-truth-and-improvement-from-it&quot;&gt;Some source code of truth and improvement from it&lt;/h2&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;class Enemy {
     var health = 10
@@ -551,8 +605,14 @@ Both the protocol and the optional requirement must be marked with the &lt;em&gt
 &lt;p&gt;When you define a protocol extension, you can specify constraints that conforming types must satisfy before the methods and properties of the extension are available. You write these constraints after the name of the protocol you’re extending using a generic &lt;strong&gt;where&lt;/strong&gt; clause.&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;extension Collection where Iterator.Element: InLovePeople {
-
+    func sayLoveTogether() -&amp;gt; String {
+        return &quot;Love All of you&quot;
+    }
 }
+
+let lovers = [InLoveMan(loverName:&quot;Zun&quot;),InLoveMan(loverName:&quot;Zun&quot;)]
+lovers.sayLoveTogether()
+
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
