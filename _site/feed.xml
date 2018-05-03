@@ -1,4 +1,50 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.4.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-02-14T16:06:35+07:00</updated><id>http://localhost:4000/</id><title type="html">Chung Bui</title><subtitle>My biography, profile and curriculum vitae</subtitle><entry><title type="html">Generics in Swift</title><link href="http://localhost:4000/Generics-in-Swift/" rel="alternate" type="text/html" title="Generics in Swift" /><published>2017-08-20T22:00:00+07:00</published><updated>2017-08-20T22:00:00+07:00</updated><id>http://localhost:4000/Generics-in-Swift</id><content type="html" xml:base="http://localhost:4000/Generics-in-Swift/">&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-05-03T17:39:25+07:00</updated><id>http://localhost:4000/</id><title type="html">Chung Bui</title><subtitle>My biography, profile and curriculum vitae</subtitle><entry><title type="html">Grouping array in Swift</title><link href="http://localhost:4000/Grouping-array-in-Swift/" rel="alternate" type="text/html" title="Grouping array in Swift" /><published>2018-05-02T22:00:00+07:00</published><updated>2018-05-02T22:00:00+07:00</updated><id>http://localhost:4000/Grouping-array-in-Swift</id><content type="html" xml:base="http://localhost:4000/Grouping-array-in-Swift/">&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// For exactly reference to only one value when accessing by Dictionany. Normally, the return type is the value type
+class Box&amp;lt;A&amp;gt; {
+    var value: A
+    init(_ val: A) {
+        self.value = val
+    }
+}
+
+public extension Sequence {
+    func group&amp;lt;U: Hashable&amp;gt;(by key: (Iterator.Element) -&amp;gt; U) -&amp;gt; [U:[Iterator.Element]] {
+        var categories: [U: Box&amp;lt;[Iterator.Element]&amp;gt;] = [:]
+        for element in self {
+            let key = key(element)
+            if case nil = categories[key]?.value.append(element) {
+                categories[key] = Box([element])
+            }
+        }
+        var result: [U: [Iterator.Element]] = Dictionary(minimumCapacity: categories.count)
+        for (key,val) in categories {
+            result[key] = val.value
+        }
+        return result
+    }
+}
+
+struct People {
+    let name:String
+    let age:Int
+}
+
+let people = [ People(name: &quot;Chung&quot;, age: 28), People(name: &quot;Hieu&quot;, age: 24), People(name: &quot;Bun Chu&quot;, age: 28) ,People(name: &quot;Zun&quot;, age: 24)]
+
+let groupByAge = people.group { $0.age }
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;referential-definition&quot;&gt;Referential Definition:&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;https://developer.apple.com/documentation/swift/sequence&quot;&gt;Sequence in Swift - Array type&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://developer.apple.com/documentation/swift/iteratorprotocol&quot;&gt;IteratorProtocol - Custom for for-in loop&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/Patterns.html&quot;&gt;Optional Pattern - if case&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://developer.apple.com/documentation/swift/dictionary/1539319-init&quot;&gt;Dictionary - minimumCapacity&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;</content><author><name>Bun Chu</name></author><category term="blog" /><category term="foundation" /><category term="ios" /><category term="tips" /><category term="swift" /><summary type="html">``` // For exactly reference to only one value when accessing by Dictionany. Normally, the return type is the value type class Box { var value: A init(_ val: A) { self.value = val } }</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/images/markdown.jpg" /></entry><entry><title type="html">Generics in Swift</title><link href="http://localhost:4000/Generics-in-Swift/" rel="alternate" type="text/html" title="Generics in Swift" /><published>2017-08-20T22:00:00+07:00</published><updated>2017-08-20T22:00:00+07:00</updated><id>http://localhost:4000/Generics-in-Swift</id><content type="html" xml:base="http://localhost:4000/Generics-in-Swift/">&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Generic code enables you to write flexible, reusable functions and types that can work with any type, 
+subject to requirements that you define. 
+You can write code that avoids duplication and expresses its intent in a clear, abstracted manner.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Bun Chu</name></author><category term="blog" /><category term="foundation" /><category term="ios" /><category term="generics" /><category term="swift" /><summary type="html">Generic code enables you to write flexible, reusable functions and types that can work with any type, subject to requirements that you define. You can write code that avoids duplication and expresses its intent in a clear, abstracted manner.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/images/markdown.jpg" /></entry><entry><title type="html">Clean Code - Sum up</title><link href="http://localhost:4000/Clean-Code/" rel="alternate" type="text/html" title="Clean Code - Sum up" /><published>2017-08-16T22:00:00+07:00</published><updated>2017-08-16T22:00:00+07:00</updated><id>http://localhost:4000/Clean-Code</id><content type="html" xml:base="http://localhost:4000/Clean-Code/">&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt;
 
 &lt;p&gt;There are some significant notes from me while I am reading the book &lt;strong&gt;Clean Code&lt;/strong&gt; of the author &lt;em&gt;Robert C.Martin&lt;/em&gt;&lt;/p&gt;
 
@@ -6,85 +52,53 @@
 
 &lt;h3 id=&quot;use-intention-revealing-names&quot;&gt;Use Intention-Revealing Names&lt;/h3&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Bad Code
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Bad Code
 
 int d; //elapsed time in days
 
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Good Code
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Good Code
 
 int elapsedTimeInDays;
 int daysSinceCreation;
 int daysSinceModification;
 int fileAgeInDays;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h2 id=&quot;summary&quot;&gt;Summary:&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;Those solution is simple with normal knowledge about Swift. You can try on another solution as RxSwift, ReSwift or using an ELM inspired architecture.&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Bun Chu</name></author><category term="blog" /><category term="foundation" /><category term="Coding Convention" /><summary type="html">Introduction</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/images/markdown.jpg" /></entry><entry><title type="html">Clean Code - Sum up</title><link href="http://localhost:4000/Clean-Code/" rel="alternate" type="text/html" title="Clean Code - Sum up" /><published>2017-08-16T22:00:00+07:00</published><updated>2017-08-16T22:00:00+07:00</updated><id>http://localhost:4000/Clean-Code</id><content type="html" xml:base="http://localhost:4000/Clean-Code/">&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt;
-
-&lt;p&gt;There are some significant notes from me while I am reading the book &lt;strong&gt;Clean Code&lt;/strong&gt; of the author &lt;em&gt;Robert C.Martin&lt;/em&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;meaningfull-names&quot;&gt;Meaningfull Names&lt;/h2&gt;
-
-&lt;h3 id=&quot;use-intention-revealing-names&quot;&gt;Use Intention-Revealing Names&lt;/h3&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Bad Code
-
-int d; //elapsed time in days
-
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Good Code
-
-int elapsedTimeInDays;
-int daysSinceCreation;
-int daysSinceModification;
-int fileAgeInDays;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h2 id=&quot;summary&quot;&gt;Summary:&lt;/h2&gt;
 &lt;ul&gt;
   &lt;li&gt;Those solution is simple with normal knowledge about Swift. You can try on another solution as RxSwift, ReSwift or using an ELM inspired architecture.&lt;/li&gt;
 &lt;/ul&gt;</content><author><name>Bun Chu</name></author><category term="blog" /><category term="foundation" /><category term="Coding Convention" /><summary type="html">Introduction</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/images/markdown.jpg" /></entry><entry><title type="html">Modelling state in Swift</title><link href="http://localhost:4000/Modelling-state-in-swift/" rel="alternate" type="text/html" title="Modelling state in Swift" /><published>2017-07-12T22:00:00+07:00</published><updated>2017-07-12T22:00:00+07:00</updated><id>http://localhost:4000/Modelling-state-in-swift</id><content type="html" xml:base="http://localhost:4000/Modelling-state-in-swift/">&lt;h2 id=&quot;some-source-code-of-truth-and-improvement-from-it&quot;&gt;Some source code of truth and improvement from it&lt;/h2&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;class Enemy {
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;class Enemy {
     var health = 10
     var isInPlay = false
 }
 we have to update two above properties concurrently because when *health = 0*, *isInPlay = true*
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;at somewhere in our code, we have some logic to handle:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;func enemyDidTakeDamage() {
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;func enemyDidTakeDamage() {
     if enemy.health &amp;lt;= 0 {
         enemy.isInPlay = false
     }
 }
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;p&gt;or&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;func performSpecialAttack() {
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;func performSpecialAttack() {
     for enemy in allEnemies {
         enemy.health = 0
     }
 }
 // they forgot to update isInPlay
 
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;p&gt;There is a solution or one way of solving this problem, and to make sure that to automatically update the &lt;em&gt;isInPlay&lt;/em&gt; property, using a &lt;em&gt;didSet&lt;/em&gt; on the &lt;em&gt;health&lt;/em&gt; property&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;class Enemy {
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;class Enemy {
     var health = 10 {
         didSet { putOutOfPlayIfNeeded() }
     }
@@ -101,21 +115,19 @@ we have to update two above properties concurrently because when *health = 0*, *
         remove()
     }
 }
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;h2 id=&quot;making-states-exclusive&quot;&gt;Making states exclusive&lt;/h2&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;struct Video {
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;struct Video {
     let url: URL
     var downloadTask: Task?
     var file: File?
     var isPlaying = false
     var progress: Double = 0
 }
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;with above structure, detecting state of video is so complex as below example
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;with above structure, detecting state of video is so complex as below example
 
 if let downloadTask = video.downloadTask {
     // Handle download
@@ -124,10 +136,9 @@ if let downloadTask = video.downloadTask {
 } else {
     // Uhm... what to do here? 🤔
 }
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;p&gt;There is a way&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;struct Video {
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;struct Video {
     enum State {
         case willDownload(from: URL)
         case downloading(task: Task)
@@ -137,10 +148,9 @@ if let downloadTask = video.downloadTask {
 
     var state: State
 }
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;The way to improve comprehension of state for play
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;The way to improve comprehension of state for play
 extension Video {
     struct PlaybackState {
         let file: File
@@ -151,12 +161,11 @@ extension Video {
 /// Use it in example 
 case playing(PlaybackState)
 case paused(PlaybackState)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h2 id=&quot;applying-it-in-reality&quot;&gt;Applying it in reality:&lt;/h2&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;class VideoPlayerViewController: UIViewController {
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;class VideoPlayerViewController: UIViewController {
     var video: Video {
         // Every time the video changes, we re-render
         didSet { render() }
@@ -197,10 +206,9 @@ case paused(PlaybackState)
         ...
     }
 }
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;private extension VideoPlayerViewController {
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;private extension VideoPlayerViewController {
     func handleStateChange() {
         switch video.state {
         case .willDownload(let url):
@@ -224,10 +232,9 @@ case paused(PlaybackState)
         }
     }
 }
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// This way you need to do something very specific that only affects a certain state. 
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// This way you need to do something very specific that only affects a certain state. 
 
 extension VideoPlayerViewController {
     override func viewDidDisappear(_ animated: Bool) {
@@ -247,8 +254,7 @@ extension Video {
         return task
     }
 }
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h2 id=&quot;summary&quot;&gt;Summary:&lt;/h2&gt;
 &lt;ul&gt;
@@ -275,20 +281,18 @@ extension Video {
 
 &lt;h2 id=&quot;cú-pháp---syntax&quot;&gt;Cú pháp - Syntax:&lt;/h2&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    protocol MyProtocol {
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    protocol MyProtocol {
         // protocol definition goes here
     }
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;p&gt;It is the same as declarations of class, structure and enumeration&lt;/p&gt;
 
 &lt;p&gt;A protocol could have a super protocol, it means its inheribility&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    protocol MyProtocol, FirstProtocol, SecondProtocol {
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    protocol MyProtocol, FirstProtocol, SecondProtocol {
         // protocol definition goes here
     }
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h2 id=&quot;rằng-buộc-về-thuộc-tính---property-requirements-&quot;&gt;Rằng buộc về thuộc tính - Property Requirements .&lt;/h2&gt;
 
@@ -297,7 +301,7 @@ extension Video {
 &lt;p&gt;Không phân biệt nó là &lt;strong&gt;thuộc tính lưu trữ(stored property)&lt;/strong&gt; hay &lt;strong&gt;thuộc tính được tính toán(Computed property)&lt;/strong&gt;.&lt;/p&gt;
 
 &lt;p&gt;Ta có ví dụ cho hai trường hợp trên như sau:&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;protocol FullNamed {
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;protocol FullNamed {
     var firstName:String { set get }
     var lastName:String { set get }
     
@@ -316,8 +320,7 @@ struct Person:FullNamed {
 
 let person = Person(firstName: &quot;Benjamin&quot;, lastName: &quot;Bui&quot;)
 
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Ta khai báo một lớp Person mà có rằng buộc biến được khai báo từ protocol FullNamed. Với firstName và lastName là hai thuộc tính có thể gán lại được giá trị và
 lấy được giá trị.&lt;/p&gt;
@@ -334,7 +337,7 @@ lấy được giá trị.&lt;/p&gt;
 &lt;h2 id=&quot;rằng-buộc-về-phương-thức-trên-trong-protocol---method-requirements&quot;&gt;Rằng buộc về phương thức trên trong protocol - Method requirements&lt;/h2&gt;
 &lt;p&gt;The following example will extend the above protocol with specific instance methods.&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;protocol FullNamed {
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;protocol FullNamed {
     var firstName:String { set get }
     var lastName:String { set get }
     
@@ -362,8 +365,7 @@ print(person.getFullName())
  
  */
 
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h2 id=&quot;rằng-buộc-khởi-tạo---initializer-requirements&quot;&gt;Rằng buộc khởi tạo - Initializer Requirements&lt;/h2&gt;
 
@@ -373,7 +375,7 @@ print(person.getFullName())
 
 &lt;p&gt;With protocol, to do this you have to add prefix &lt;strong&gt;mutating&lt;/strong&gt;&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;protocol FullNamed {
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;protocol FullNamed {
     var firstName:String { set get }
     var lastName:String { set get }
     
@@ -387,8 +389,7 @@ struct Person:FullNamed {
         lastName = fullname.lastName
     }
 }
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h2 id=&quot;protocol-là-một-loại-dữ-liệu---protocols-as-types&quot;&gt;Protocol là một loại dữ liệu - Protocols as Types&lt;/h2&gt;
 
@@ -405,7 +406,7 @@ struct Person:FullNamed {
 
 &lt;p&gt;We are a example about modeling a people in love&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;protocol InLovePeople {
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;protocol InLovePeople {
     var lover:String { get set }
     
     func startTheRelationship()
@@ -455,8 +456,7 @@ let tracker = PeopleTracker()
 man.delegate = tracker
 man.startTheRelationship()
 
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt;
 Because a delegate isn’t required in order to do action like as its instance, the delegate property is defined as an optional&lt;/p&gt;
@@ -468,7 +468,7 @@ Because a delegate isn’t required in order to do action like as its instance, 
   &lt;li&gt;Extensions can add new properties, methods, and subscripts to an existing type.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;protocol InLovePeople {
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;protocol InLovePeople {
     var lover:String { get set }
     
     func startTheRelationship()
@@ -479,8 +479,7 @@ extension InLoveMan: InLovePeople {
         return &quot;It look like confident and enjoyable with life&quot;
     }
 }
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h3 id=&quot;việc-khai-báo-làm-theo-với-một-sự-mở-rộng---declaring-protocol-adoption-with-an-extension&quot;&gt;Việc khai báo làm theo với một sự mở rộng - Declaring Protocol Adoption with an Extension.&lt;/h3&gt;
 
@@ -488,7 +487,7 @@ extension InLoveMan: InLovePeople {
   &lt;li&gt;If a type already conforms to all of the requirements of a protocol, but has not yet stated that it adopts that protocol, you can make it adopt the protocol with an empty extension:&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;class InLoveMan {
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;class InLoveMan {
     var lover: String
     
     var delegate:InLovePeopleDelegate?
@@ -505,8 +504,7 @@ extension InLoveMan: InLovePeople {
 }
 
 class InLoveMan:InLovePeople { }
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt;&lt;/p&gt;
 &lt;blockquote&gt;
@@ -521,11 +519,10 @@ class InLoveMan:InLovePeople { }
 
 &lt;p&gt;You can limit protocol adoption to class types (and not structures or enumerations) by adding the AnyObject protocol to a protocol’s inheritance list.&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;protocol SomeClassOnlyProtocol: AnyObject, SomeInheritedProtocol {
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;protocol SomeClassOnlyProtocol: AnyObject, SomeInheritedProtocol {
     // class-only protocol definition goes here
 }
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h2 id=&quot;sự-kết-hợp-giữa-các-giao-thức---protocol-composition&quot;&gt;Sự kết hợp giữa các giao thức - Protocol Composition&lt;/h2&gt;
 
@@ -533,7 +530,7 @@ class InLoveMan:InLovePeople { }
 
 &lt;p&gt;It has the form &lt;em&gt;SomeProtocol &amp;amp; AnotherProtocol&lt;/em&gt;&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;protocol InLovePeople {
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;protocol InLovePeople {
     var lover:String { get set }
     
     func startTheRelationship()
@@ -556,21 +553,19 @@ func wantToBeHappyPerson(likeThis person:InLovePeople &amp;amp; InPassionPeople)
     print(&quot;Yes, I want to be like \(person.lover) \(person.profession)&quot;)
 }
 
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h2 id=&quot;kiểm-tra-biến-loại-protocol---checking-for-protocol-conformance&quot;&gt;Kiểm tra biến loại protocol - Checking for Protocol Conformance&lt;/h2&gt;
 
 &lt;p&gt;You can use the &lt;em&gt;is&lt;/em&gt; and &lt;em&gt;as&lt;/em&gt; operators to check for Protocol conformance, and to cast to a special protocol.&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;let object = HappyPerson(lover:&quot;Her&quot;,profession:&quot;Designer&quot;)
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;let object = HappyPerson(lover:&quot;Her&quot;,profession:&quot;Designer&quot;)
 
 if let workLover = object as? InPassionPeople {
     print(&quot;He is awesome!&quot;)
 }
 
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h2 id=&quot;rằng-buộc-tùy-chọn-cho-giao-thức---optional-protocol-requirements&quot;&gt;Rằng buộc tùy chọn cho giao thức - Optional Protocol Requirements:&lt;/h2&gt;
 &lt;p&gt;Optional requirements for protocol do not have to do implemented by types that conform to the protocol.
@@ -579,24 +574,22 @@ Both the protocol and the optional requirement must be marked with the &lt;em&gt
 
 &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; &lt;em&gt;@obj&lt;/em&gt; protocols can be adopted only by classes that inherit from Objective-C classes or other &lt;em&gt;@obj&lt;/em&gt; classes&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;@objc protocol HappyPersonDataSource {
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;@objc protocol HappyPersonDataSource {
     @objc optional func goAhead()
     @objc optional var objective: String { get }
 }
 
 ## 
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h2 id=&quot;protocol-extensions&quot;&gt;Protocol Extensions&lt;/h2&gt;
 &lt;p&gt;Protocols can be extended to provide method and property implementations to conforming types. This allows you to define behavior on protocols themselves, rather than in each type’s individual conformance or in a global function.&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;extension InLovePeople {
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;extension InLovePeople {
     func isThinkingAboutThatPerson() -&amp;gt; bool
 }
 
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;h3 id=&quot;default-implementations&quot;&gt;Default Implementations&lt;/h3&gt;
 &lt;p&gt;You can use protocol extensions to provide a default implementation to any method or computed property requirement of that protocol.&lt;/p&gt;
 
@@ -604,7 +597,7 @@ Both the protocol and the optional requirement must be marked with the &lt;em&gt
 
 &lt;p&gt;When you define a protocol extension, you can specify constraints that conforming types must satisfy before the methods and properties of the extension are available. You write these constraints after the name of the protocol you’re extending using a generic &lt;strong&gt;where&lt;/strong&gt; clause.&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;extension Collection where Iterator.Element: InLovePeople {
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;extension Collection where Iterator.Element: InLovePeople {
     func sayLoveTogether() -&amp;gt; String {
         return &quot;Love All of you&quot;
     }
@@ -613,8 +606,7 @@ Both the protocol and the optional requirement must be marked with the &lt;em&gt
 let lovers = [InLoveMan(loverName:&quot;Zun&quot;),InLoveMan(loverName:&quot;Zun&quot;)]
 lovers.sayLoveTogether()
 
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h2 id=&quot;reference&quot;&gt;Reference:&lt;/h2&gt;
 &lt;ol&gt;
@@ -719,11 +711,10 @@ Ví dụ: mình sử dụng phiên bản Xcode 8.2.1
 
 &lt;h3 id=&quot;cách-1-sử-dụng-bên-trong-view-controller&quot;&gt;&lt;strong&gt;Cách 1:&lt;/strong&gt; sử dụng bên trong View Controller&lt;/h3&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    func injected() {
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    func injected() {
         print(&quot;I've been injected: \(self)&quot;)
     }
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;ul&gt;
   &lt;li&gt;Thực hiện built và chạy trên Simulator.&lt;/li&gt;
   &lt;li&gt;Khi View Controller trên hiện ra. Nhấn tổ hợp phím ‘Ctrl + =’. Một đoạn log sẽ được hiện ra dưới Debug area như bên dưới. Nghĩa là bạn đã cài đặt và sử dụng thành công.&lt;/li&gt;
@@ -733,12 +724,11 @@ Ví dụ: mình sử dụng phiên bản Xcode 8.2.1
 
 &lt;ul&gt;
   &lt;li&gt;Mỗi lần sử dụng thao tác này, code sẽ chạy vào hàm injected, thực hiện dòng lệnh nếu có thay đổi code. Thay thử vài thao tác cơ bản để thấy sự khác biệt.
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  func injected() {
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  func injected() {
       print(&quot;I've been injected: \(self)&quot;)
       view.backgroundColor = .darkText
   }
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
     &lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/post/2017/injection/unsign_3.png&quot; alt=&quot;Markdowm Image&quot; /&gt;&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;Vào nhớ Cmd + S để save lại trạng thái trước khi thử.&lt;/li&gt;
