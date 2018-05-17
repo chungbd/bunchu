@@ -18,7 +18,7 @@ I feel angry and wasteful with my time while have to wait Xcode finish compiling
 
 So I want to solve my issue and found out some amazing way. Usually, I take 5 minutes from scratch to complete the app building. After my customization, it's only 2 minutes.
 
-## Fix all warning appear while building the app
+## [Fix all warning appear while building the app]()
 
 It's the simple way for you and me when you don't have any thing about making it shorter.
 ![Markdowm Image]({{site.url}}/assets/post/2018/compile-time/compile-time1.png)
@@ -35,6 +35,6 @@ It's a good tool for code optimization. We also learn how Xcode compile code fas
 
 I tried this way with amazing about compile time, decrease from 4 minutes to 2 minutes. I recommend this way to you.
 
-##  Some where you can consult their way
+##  [Some where you can consult their way]()
 
 1. [https://github.com/fastred/Optimizing-Swift-Build-Times](https://github.com/fastred/Optimizing-Swift-Build-Times)
