@@ -1,0 +1,22 @@
+---
+title: "Sourcery - Automating Swift boilerplate"
+layout: post
+date: 2018-10-23 22:00
+image: /assets/images/markdown.jpg
+headerImage: false
+tag:
+- iOS
+- Swift
+- Sourcery
+star: true
+category: blog
+author: Bun Chu
+description: This is some notes when you use Sourcery 
+---
+
+
+##Contents:
+1. Installation
+2. First example
+3. Some knowledge about Stencil
+4. My templates
