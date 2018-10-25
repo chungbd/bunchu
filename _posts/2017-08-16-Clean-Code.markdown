@@ -37,10 +37,5 @@ int daysSinceModification;
 int fileAgeInDays;
 ```
 
-
-
-## Summary:
-* Those solution is simple with normal knowledge about Swift. You can try on another solution as RxSwift, ReSwift or using an ELM inspired architecture.
-
-[1]: [Modelling state in Swift - SWIFT BY SUNDELL](https://www.swiftbysundell.com/posts/modelling-state-in-swift)
+Continous...
 
